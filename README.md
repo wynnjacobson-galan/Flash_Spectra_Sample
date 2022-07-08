@@ -1,1 +1,1 @@
-# Flash_Spectra_Sample
+# Flash Spectroscopy Sample Data
