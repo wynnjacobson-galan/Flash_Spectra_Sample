@@ -1,0 +1,6 @@
+Explosion Date = 59095.25 +/- 1 day 
+B-band Peak Date = 59117.0 
+z = 0.00838532
+Distance = 36.482 Mpc
+Host E(B-V) = 0.018  
+MW E(B-V) = 0.014
