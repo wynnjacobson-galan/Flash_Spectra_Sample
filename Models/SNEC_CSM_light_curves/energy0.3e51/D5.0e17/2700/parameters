@@ -1,0 +1,92 @@
+#____________LAUNCH_____________
+
+outdir              = "Data"
+
+#___________PROFILE_____________
+
+profile_name 		= "/data002/ahaynie/SNEC/CSM_models/models_M14.5_25/m14.5_K5.0e17_R2700/s14.5_K5.0e17_2700.short"
+
+comp_profile_name	= "/data002/ahaynie/SNEC/CSM_models/models_M14.5_25/m14.5_K5.0e17_R2700/s14.5_K5.0e17_2700.iso.dat"
+
+#__________EXPLOSION_____________
+
+initial_data 		= "Thermal_Bomb"
+
+#Options:
+#"Piston_Explosion"
+#"Thermal_Bomb"
+
+piston_vel          = 5.0d9
+piston_tstart       = 0.0d0
+piston_tend         = 1.0d-2
+
+final_energy        = 0.3d51
+bomb_tstart         = 0.0d0
+bomb_tend           = 1.0d0
+bomb_mass_spread    = 0.02d0 #(in solar mass)
+bomb_start_point    = 1
+
+burning             = 0
+burning_boundary    = 3.0d0 #(in solar mass)
+
+#_____________GRID_______________
+
+imax         = 1000
+
+gridding = "from_file_by_mass"
+
+#Options:
+#"uniform_by_mass"
+#"from_file_by_mass"
+
+mass_excision = 1
+mass_excised = 1.4 #in solar mass, provided mass_excision = 1
+
+#___________EVOLUTION_____________
+
+radiation = 1
+eoskey = 2
+
+#Options:
+#1 - ideal eos
+#2 - Paczynski
+#3 - helmholtz
+#4 - Timmes eos (with Saha solver)
+
+helm_table_name = "src/helmholtz_eos/helm_table.dat"
+
+Ni_switch = 1
+Ni_mass = 0.05 			#(in solar mass)
+Ni_boundary_mass = 3.5          #(in solar mass, here carefull with the excised mass)
+                                       #(attention - smoothing is going to change it, if applied)
+Ni_period = 1.0d4
+
+saha_ncomps = 3
+
+boxcar_smoothing = 1
+
+opacity_floor_envelope = 0.01d0
+opacity_floor_core     = 0.24d0
+
+#___________TIMING_______________
+
+ntmax               = 10000000000000
+
+tend                = 1987200.0d0
+
+dtout               = 1.7d4
+dtout_scalar        = 1.0d4
+dtout_check         = 1.0d4
+
+ntout               = -1
+ntout_scalar        = -1
+ntout_check         = -1
+
+ntinfo              = 1000
+
+dtmin               = 1.0d-10
+dtmax               = 1.0d2
+
+#____________TEST_________________
+
+sedov 		    = 0
